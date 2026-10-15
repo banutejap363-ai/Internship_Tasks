@@ -1,19 +1,21 @@
-# Problem: No Idea!
-# https://www.hackerrank.com/challenges/no-idea/problem
+# Problem: Piling Up!
+# HackerRank: https://www.hackerrank.com/challenges/piling-up/problem
+
+from collections import deque
 
 if __name__ == '__main__':
-    n, m = map(int, input().split())
-    array = list(map(int, input().split()))
-
-    A = set(map(int, input().split()))
-    B = set(map(int, input().split()))
-
-    happiness = 0
-
-    for number in array:
-        if number in A:
-            happiness += 1
-        elif number in B:
-            happiness -= 1
-
-    print(happiness)
+    for _ in range(int(input())):
+        n = int(input())
+        blocks = deque(map(int, input().split()))
+        last = float('inf')
+        possible = True
+        while blocks:
+            if blocks[0] >= blocks[-1]:
+                current = blocks.popleft()
+            else:
+                current = blocks.pop()
+            if current > last:
+                possible = False
+                break
+            last = current
+        print("Yes" if possible else "No")

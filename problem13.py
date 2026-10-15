@@ -1,14 +1,13 @@
-# Problem: Symmetric Difference
-# https://www.hackerrank.com/challenges/symmetric-difference/problem
+# Problem: Nested Lists
+# HackerRank: https://www.hackerrank.com/challenges/nested-list/problem
 
 if __name__ == '__main__':
-    M = int(input())
-    set_m = set(map(int, input().split()))
+    records = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        records.append([name, score])
 
-    N = int(input())
-    set_n = set(map(int, input().split()))
-
-    result = sorted(set_m.symmetric_difference(set_n))
-
-    for value in result:
-        print(value)
+    second_lowest = sorted(set(score for _, score in records))[1]
+    for name in sorted(name for name, score in records if score == second_lowest):
+        print(name)

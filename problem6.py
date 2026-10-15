@@ -1,8 +1,10 @@
-# Problem: Find the Runner-Up Score!
-# https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
+# Problem: Introduction to Sets
+# HackerRank: https://www.hackerrank.com/challenges/py-introduction-to-sets/problem
 
-n = int(input())
-scores = list(map(int, input().split()))
+def average(array):
+    return sum(set(array)) / len(set(array))
 
-unique_scores = sorted(set(scores), reverse=True)
-print(unique_scores[1])
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    print(average(arr))

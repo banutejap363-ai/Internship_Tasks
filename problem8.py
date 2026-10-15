@@ -1,10 +1,9 @@
-# Problem: What's Your Name?
-# https://www.hackerrank.com/challenges/whats-your-name/problem
-
-def print_full_name(first, last):
-    print(f"Hello {first} {last}! You just delved into python.")
+# Problem: Set .add()
+# HackerRank: https://www.hackerrank.com/challenges/py-set-add/problem
 
 if __name__ == '__main__':
-    first_name = input()
-    last_name = input()
-    print_full_name(first_name, last_name)
+    n = int(input())
+    stamps = set()
+    for _ in range(n):
+        stamps.add(input().strip())
+    print(len(stamps))

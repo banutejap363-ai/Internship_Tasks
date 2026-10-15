@@ -1,8 +1,10 @@
-# Problem: Python Division
-# https://www.hackerrank.com/challenges/python-division/problem
+# Problem: Mutations
+# HackerRank: https://www.hackerrank.com/challenges/python-mutations/problem
 
-a = int(input())
-b = int(input())
+def mutate_string(string, position, character):
+    return string[:position] + character + string[position + 1:]
 
-print(a // b)
-print(a / b)
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    print(mutate_string(s, int(i), c))

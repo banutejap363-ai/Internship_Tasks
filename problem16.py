@@ -1,21 +1,16 @@
-# Problem: Nested Lists
-# https://www.hackerrank.com/challenges/nested-list/problem
+# Problem: Collections.Counter()
+# HackerRank: https://www.hackerrank.com/challenges/collections-counter/problem
+
+from collections import Counter
 
 if __name__ == '__main__':
-    records = []
-
-    for _ in range(int(input())):
-        name = input()
-        score = float(input())
-        records.append([name, score])
-
-    scores = sorted(set(record[1] for record in records))
-    second_lowest = scores[1]
-
-    names = sorted(
-        record[0] for record in records
-        if record[1] == second_lowest
-    )
-
-    for name in names:
-        print(name)
+    x = int(input())
+    shoe_sizes = Counter(map(int, input().split()))
+    n = int(input())
+    earnings = 0
+    for _ in range(n):
+        size, price = map(int, input().split())
+        if shoe_sizes[size] > 0:
+            earnings += price
+            shoe_sizes[size] -= 1
+    print(earnings)

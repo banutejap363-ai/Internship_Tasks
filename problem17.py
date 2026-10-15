@@ -1,16 +1,10 @@
-# Problem: Finding the Percentage
-# https://www.hackerrank.com/challenges/finding-the-percentage/problem
+# Problem: No Idea!
+# HackerRank: https://www.hackerrank.com/challenges/no-idea/problem
 
 if __name__ == '__main__':
-    n = int(input())
-    student_marks = {}
-
-    for _ in range(n):
-        data = input().split()
-        name = data[0]
-        marks = list(map(float, data[1:]))
-        student_marks[name] = marks
-
-    query_name = input()
-    average = sum(student_marks[query_name]) / 3
-    print(f"{average:.2f}")
+    n, m = map(int, input().split())
+    arr = list(map(int, input().split()))
+    a = set(map(int, input().split()))
+    b = set(map(int, input().split()))
+    happiness = sum((x in a) - (x in b) for x in arr)
+    print(happiness)

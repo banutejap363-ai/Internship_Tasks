@@ -1,11 +1,16 @@
-# Problem: Introduction to Sets
-# https://www.hackerrank.com/challenges/py-introduction-to-sets/problem
+# Problem: Capitalize!
+# HackerRank: https://www.hackerrank.com/challenges/capitalize/problem
 
-def average(array):
-    distinct_heights = set(array)
-    return sum(distinct_heights) / len(distinct_heights)
+#!/bin/python3
+
+import os
+
+def solve(s):
+    return ' '.join(word.capitalize() for word in s.split(' '))
 
 if __name__ == '__main__':
-    n = int(input())
-    arr = list(map(int, input().split()))
-    print(average(arr))
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    s = input()
+    result = solve(s)
+    fptr.write(result + '\n')
+    fptr.close()

@@ -1,20 +1,17 @@
-# Problem: Collections.Counter()
-# https://www.hackerrank.com/challenges/collections-counter/problem
+# Problem: Merge the Tools!
+# HackerRank: https://www.hackerrank.com/challenges/merge-the-tools/problem
 
-from collections import Counter
+def merge_the_tools(string, k):
+    for i in range(0, len(string), k):
+        chunk = string[i:i + k]
+        seen = set()
+        result = []
+        for char in chunk:
+            if char not in seen:
+                seen.add(char)
+                result.append(char)
+        print(''.join(result))
 
 if __name__ == '__main__':
-    X = int(input())
-    shoe_sizes = Counter(map(int, input().split()))
-
-    N = int(input())
-    earnings = 0
-
-    for _ in range(N):
-        size, price = map(int, input().split())
-
-        if shoe_sizes[size] > 0:
-            earnings += price
-            shoe_sizes[size] -= 1
-
-    print(earnings)
+    string, k = input(), int(input())
+    merge_the_tools(string, k)

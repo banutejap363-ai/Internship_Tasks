@@ -1,15 +1,23 @@
-# Problem: Word Order
-# https://www.hackerrank.com/challenges/word-order/problem
-
-from collections import OrderedDict
+# Problem: Lists
+# HackerRank: https://www.hackerrank.com/challenges/python-lists/problem
 
 if __name__ == '__main__':
     n = int(input())
-    word_count = OrderedDict()
-
+    items = []
     for _ in range(n):
-        word = input().strip()
-        word_count[word] = word_count.get(word, 0) + 1
-
-    print(len(word_count))
-    print(*word_count.values())
+        command, *args = input().split()
+        args = list(map(int, args))
+        if command == 'insert':
+            items.insert(args[0], args[1])
+        elif command == 'print':
+            print(items)
+        elif command == 'remove':
+            items.remove(args[0])
+        elif command == 'append':
+            items.append(args[0])
+        elif command == 'sort':
+            items.sort()
+        elif command == 'pop':
+            items.pop()
+        elif command == 'reverse':
+            items.reverse()

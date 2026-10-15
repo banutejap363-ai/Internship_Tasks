@@ -1,11 +1,11 @@
-# Problem: String Validators
-# https://www.hackerrank.com/challenges/string-validators/problem
+# Problem: Text Wrap
+# HackerRank: https://www.hackerrank.com/challenges/text-wrap/problem
+
+import textwrap
+
+def wrap(string, max_width):
+    return textwrap.fill(string, max_width)
 
 if __name__ == '__main__':
-    s = input()
-
-    print(any(c.isalnum() for c in s))
-    print(any(c.isalpha() for c in s))
-    print(any(c.isdigit() for c in s))
-    print(any(c.islower() for c in s))
-    print(any(c.isupper() for c in s))
+    string, max_width = input(), int(input())
+    print(wrap(string, max_width))
